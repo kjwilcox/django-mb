@@ -25,6 +25,6 @@ class Message(models.Model):
     user = models.ForeignKey(User)
 
     def __str__(self):
-        return self.text[:20]
+        return self.text[:20] + "..." if len(self.text) > 20 else ""
 
 

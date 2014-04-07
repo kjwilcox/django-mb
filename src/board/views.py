@@ -1,22 +1,26 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import RequestContext, loader
-from polls.models import Poll
+from board.models import Board, Topic, Message
+
 
 
 def index(request):
-    #latest_poll_list = Poll.objects.all().order_by('-pub_date')[:5]
-    #context = {'latest_poll_list': latest_poll_list}
-    #return render(request, 'polls/index.html', context)
-    return HttpResponse("This is the board list")
+    board_list = Board.objects.all()
+    context = {'board_list': board_list}
+    return render(request, 'board/index.html', context)
 
 
 def board(request, board_id):
-    return HttpResponse("This is the topic list for board {}.".format(board_id))
+    topic_list = Topic.objects.filter(board=board_id)
+    context = {'topic_list': topic_list}
+    return render(request, 'board/board.html', context)
 
 
 def topic(request, topic_id):
-    return HttpResponse("This is the message list for topic {}.".format(topic_id))
+    message_list = Message.objects.filter(topic=topic_id)
+    context = {'message_list': message_list}
+    return render(request, 'board/topic.html', context)
 
 
 def message(request, message_id):

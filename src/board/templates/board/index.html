@@ -1,0 +1,9 @@
+{% if board_list %}
+    <ul>
+    {% for board in board_list %}
+        <li><a href="/mb/board/{{ board.id }}/">{{ board.title }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No boards found.</p>
+{% endif %}

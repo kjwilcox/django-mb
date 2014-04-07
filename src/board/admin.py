@@ -22,7 +22,7 @@ admin.site.register(Topic, TopicAdmin)
 
 
 class MessageAdmin(admin.ModelAdmin):
-    fields = ['post_time', 'text', 'user']
+    fields = ['post_time', 'text', 'topic', 'user']
 
 admin.site.register(Message, MessageAdmin)
 

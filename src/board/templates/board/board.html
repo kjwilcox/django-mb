@@ -1,0 +1,9 @@
+{% if topic_list %}
+    <ul>
+    {% for topic in topic_list %}
+        <li><a href="/mb/topic/{{ topic.id }}/">{{ topic.title }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>This board has no topics.</p>
+{% endif %}

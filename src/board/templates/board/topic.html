@@ -1,0 +1,9 @@
+{% if message_list %}
+    <ul>
+    {% for message in message_list %}
+        <li><a href="/mb/message/{{ message.id }}/">?</a> {{ message.text }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>This topic has no messages.</p>
+{% endif %}
