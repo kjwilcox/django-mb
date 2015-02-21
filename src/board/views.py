@@ -1,8 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from django.template import RequestContext, loader
-from board.models import Board, Topic, Message
 
+from board.models import Board, Topic, Message
 
 
 def index(request):
