@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from distutils.core import setup
+from setuptools import setup, find_packages
 
 setup(
     name='django-mb',
@@ -8,6 +8,7 @@ setup(
     description='A simple message board written in Django',
     author='Kyle Wilcox',
     author_email='k.j.wilcox@gmail.com',
+    packages=find_packages(exclude=('tests',)),
     install_requires=(
         'Django',
     )
